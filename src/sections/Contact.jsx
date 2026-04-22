@@ -252,9 +252,3 @@ export const Contact = () => {
     </section>
   );
 };
-
-
-
-
-
-

@@ -5,20 +5,34 @@ import { Github, Linkedin, Twitter, Download, ArrowRight, ChevronDown } from "lu
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 
 const skills = [
-  "React",
-  "Next.js",
+  "C",
+  "C++",
+  "JAVA",
+  "Python",
+  "HTML",
+  "CSS",
   "JavaScript",
-  "Node.js",
-  "GraphQL",
-  "PostgreSQL",
-  "MongoDB",
-  "Redis",
-  "Docker",
-  "Vercel",
-  "Tailwind CSS",
-  "Figma",
   "Git",
   "GitHub Actions",
+  "Node.js",
+  "Next.js",
+  "Express.js",
+  "Node.ejs",
+  "REST",
+  "REST API",
+  "SQL",
+  "MYSQL",
+  "MongoDB",
+  "React.js",
+  "Tailwind CSS",
+  "MVC Model",
+  "Material UI",
+  "Redux & Redux Toolkit",
+  "JEST",
+  "AWS",
+  "Docker",
+  "CI/CD Pipeline",
+  "Kubernetes"
 ];
 
 export const Hero = () => {
@@ -216,7 +230,4 @@ export const Hero = () => {
     </section>
   );
 };
-
-
-
 

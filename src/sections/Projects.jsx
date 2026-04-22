@@ -2,13 +2,12 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 const projects = [
   {
-    title: "Fintech Dashboard",
+    title: "Wanderlust-Website",
     description:
-      "A comprehensive financial analytics platform with real-time data visualization, portfolio management, and AI-powered insights.",
+      "A full-stack travel listing web app where users can create, edit, and manage listings with authentication, image uploads, and reviews.",
     image: "/projects/project1.png",
-    tags: ["React", "Typescript", "NodeJS"],
-    link: "#",
-    github: "#",
+    tags: ["Node.js", "Express", "MongoDB", "EJS", "Cloudinary", "Passport"],
+    github: "https://github.com/ianchalsingh196/Wanderlust-Website",
   },
   {
     title: "E-Commerce Platform",
@@ -16,7 +15,6 @@ const projects = [
       "A full-featured e-commerce solution with inventory management, payment processing, and analytics dashboard.",
     image: "/projects/project2.png",
     tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
-    link: "#",
     github: "#",
   },
   {

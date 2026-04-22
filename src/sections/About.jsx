@@ -49,22 +49,13 @@ export const About = () => {
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                I'm a passionate software engineer with over 5 years of
-                experience crafting digital products that make a difference. My
-                journey started with a curiosity for how things work on the web,
-                and it has evolved into a deep expertise in modern frontend
-                technologies.
+                I am a passionate software engineer focused on building high-performance, scalable web applications. My journey is driven by a deep curiosity for how digital infrastructure shapes our daily lives and a commitment to mastering the modern web ecosystem
               </p>
               <p>
-                I specialize in React, Next.js, and TypeScript, building
-                everything from sleek landing pages to complex enterprise
-                applications. My approach combines technical excellence with a
-                keen eye for design and user experience.
+                I specialize in the MERN stack, Next.js and JavaScript, turning ideas into seamless, enterprise-grade digital experiences. I approach development by balancing technical excellence with a keen eye for user-centric design and efficient architecture, leveraging the full power of the modern JavaScript ecosystem to build robust applications
               </p>
               <p>
-                When I'm not coding, you'll find me exploring new technologies,
-                contributing to open-source projects, or sharing knowledge with
-                the developer community.
+                As a student engineer, I am focused on mastering the fundamentals of Data Structures and Algorithms to build more efficient, resilient software. Beyond the editor, I am constantly exploring new technologies, contributing to open-source, and building in public to share my growth journey with fellow developers.
               </p>
             </div>
 
@@ -100,9 +91,3 @@ export const About = () => {
     </section>
   );
 };
-
-
-
-
-
-
