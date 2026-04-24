@@ -10,12 +10,12 @@ const projects = [
     github: "https://github.com/ianchalsingh196/Wanderlust-Website",
   },
   {
-    title: "E-Commerce Platform",
+    title: "Todo-list App",
     description:
-      "A full-featured e-commerce solution with inventory management, payment processing, and analytics dashboard.",
+      "A sleek, responsive task management application designed for daily productivity. Features real-time task CRUD operations, persistent data storage using LocalStorage, and a modern, dark-themed UI.",
     image: "/projects/project2.png",
-    tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
-    github: "#",
+    tags: ["React.js", "Tailwind CSS", "React Router", "LocalStorage"],
+    github: "https://github.com/ianchalsingh196/todo-list.git",
   },
   {
     title: "AI Writing Assistant",
@@ -147,18 +147,3 @@ export const Projects = () => {
     </section>
   );
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

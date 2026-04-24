@@ -1,39 +1,36 @@
 const experiences = [
   {
-    period: "2022 — Present",
-    role: "Senior Frontend Engineer",
-    company: "Tech Innovators Inc.",
-    description:
-      "Leading frontend architecture for a suite of fintech products. Implemented micro-frontend architecture, reduced bundle size by 40%, and mentored a team of 5 developers.",
-    technologies: ["React", "TypeScript", "Next.js", "GraphQL"],
+    period: "2026 — Present",
+    role: "Full-Stack Development",
+    company: "Personal Projects & Learning",
+    description: "Building scalable web applications using the MERN stack and Next.js. Currently documenting my growth and technical progress to contribute back to the developer community.",
+    technologies: ["React", "Next.js", "Node.js", "MongoDB", "Docker", "CI/CD"],
     current: true,
   },
   {
-    period: "2020 — 2022",
-    role: "Frontend Engineer",
-    company: "Digital Solutions Co.",
-    description:
-      "Built and maintained multiple React applications for enterprise clients. Introduced automated testing practices that improved code coverage to 85%.",
-    technologies: ["React", "Redux", "Jest", "Cypress"],
+    period: "2025 — Present",
+    role: "Frontend Development Student",
+    company: "Rajkiya Engineering College",
+    description: "Developing responsive web interfaces and implementing secure API integrations. Focused on bridging UI design with robust backend logic.",
+    technologies: ["JavaScript", "React", "CSS/Tailwind", "Vite"],
     current: false,
   },
   {
-    period: "2019 — 2020",
-    role: "Junior Developer",
-    company: "StartUp Labs",
-    description:
-      "Contributed to the development of a SaaS platform from MVP to production. Collaborated with designers to implement pixel-perfect UI components.",
-    technologies: ["React", "Node.js", "MongoDB", "AWS"],
+    period: "2026 — Present",
+    role: "Open Source & DSA Enthusiast",
+    company: "Self-Driven Learning",
+    description: "Actively mastering Data Structures and Algorithms with Java. Focusing on optimizing code efficiency and building a strong foundation for software engineering.",
+    technologies: ["Java", "DSA", "Git", "GitHub"],
     current: false,
   },
   {
-    period: "2018 — 2019",
-    role: "Freelance Developer",
+    period: "2026 — Present",
+    role: "Freelance Web Developer",
     company: "Self-Employed",
     description:
-      "Delivered custom web solutions for small businesses and startups. Built 15+ websites and applications, handling everything from design to deployment.",
-    technologies: ["JavaScript", "PHP", "WordPress", "MySQL"],
-    current: false,
+      "Partnering with clients to build and deploy custom, high-performance web applications. Focused on delivering tailored digital solutions, from initial design to production-ready deployment.",
+    technologies: ["React", "Next.js", "Node.js", "MongoDB"],
+    current: true,
   },
 ];
 
@@ -52,17 +49,17 @@ export const Experience = () => {
             className="text-secondary-foreground text-sm
            font-medium tracking-wider uppercase animate-fade-in"
           >
-            Career Journey
+            My Growth Journey
           </span>
           <h2
             className="text-4xl md:text-5xl font-bold
            mt-4 mb-6 animate-fade-in animation-delay-100
             text-secondary-foreground"
           >
-            Experience that{" "}
+            Building with{" "}
             <span className="font-serif italic font-normal text-white">
               {" "}
-              speaks volumes.
+              purpose and precision.
             </span>
           </h2>
 
@@ -70,8 +67,7 @@ export const Experience = () => {
             className="text-muted-foreground
            animate-fade-in animation-delay-200"
           >
-            A timeline of my professional growth, from curious beginner to
-            senior engineer leading teams and building products at scale.
+            A timeline of my development journey, from exploring the fundamentals of the web to building full-stack applications and solving complex technical challenges.
           </p>
         </div>
 
@@ -137,15 +133,4 @@ export const Experience = () => {
     </section>
   );
 };
-
-
-
-
-
-
-
-
-
-
-
 
