@@ -18,13 +18,12 @@ const projects = [
     github: "https://github.com/ianchalsingh196/todo-list.git",
   },
   {
-    title: "AI Writing Assistant",
+    title: "Weather-App",
     description:
-      "An intelligent writing tool powered by GPT-4, helping users create better content faster.",
+      "A dynamic weather dashboard providing real-time meteorological data, featuring interactive UI updates, search functionality, and environment-secured API integration.",
     image: "/projects/project3.png",
-    tags: ["React", "OpenAI", "Python", "FastAPI"],
-    link: "#",
-    github: "#",
+    tags: ["React", "Weather API", "Material UI", "Tailwind CSS"],
+    github: "https://github.com/ianchalsingh196/Weather_App.git",
   },
   {
     title: "Project Management Tool",
