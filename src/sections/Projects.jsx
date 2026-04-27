@@ -25,15 +25,6 @@ const projects = [
     tags: ["React", "Weather API", "Material UI", "Tailwind CSS"],
     github: "https://github.com/ianchalsingh196/Weather_App.git",
   },
-  {
-    title: "Project Management Tool",
-    description:
-      "A collaborative workspace for teams with real-time updates, task tracking, and integrations.",
-    image: "/projects/project4.png",
-    tags: ["Next.js", "Socket.io", "MongoDB", "Redis"],
-    link: "#",
-    github: "#",
-  },
 ];
 
 export const Projects = () => {
@@ -146,3 +137,11 @@ export const Projects = () => {
     </section>
   );
 };
+
+
+
+
+
+
+
+
