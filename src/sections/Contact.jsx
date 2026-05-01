@@ -48,23 +48,25 @@ export const Contact = () => {
 
     setIsLoading(true);
     setSubmitStatus({ type: null, message: "" });
+    
     try {
+      // Accessing Vite environment variables
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-      if (!serviceId || !templateId || !publicKey) {
-        throw new Error(
-          "EmailJS configuration is missing. Please check your environment variables."
-        );
-      }
+      // if (!serviceId || !templateId || !publicKey) {
+      //   throw new Error(
+      //     "EmailJS configuration is missing. Please check your .env file and restart the server."
+      //   );
+      // }
 
       await emailjs.send(
         serviceId,
         templateId,
         {
-          name: formData.name,
-          email: formData.email,
+          from_name: formData.name,    // Ensure these match your EmailJS template fields
+          reply_to: formData.email,
           message: formData.message,
         },
         publicKey
@@ -75,16 +77,17 @@ export const Contact = () => {
         message: "Message sent successfully! I'll get back to you soon.",
       });
       setFormData({ name: "", email: "", message: "" });
-     } catch (err) {
-  console.error("EmailJS error:", err); // Use 'err'
-  setSubmitStatus({
-    type: "error",
-    message: err.text || "Failed to send message. Please try again later.",
-  });
-} finally {
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setSubmitStatus({
+        type: "error",
+        message: err?.text || err?.message || "Failed to send message. Please try again later.",
+      });
+    } finally {
       setIsLoading(false);
     }
   };
+
   return (
     <section id="contact" className="py-32 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full">
@@ -93,7 +96,6 @@ export const Contact = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
             Get In Touch
@@ -114,10 +116,7 @@ export const Contact = () => {
           <div className="glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium mb-2"
-                >
+                <label htmlFor="name" className="block text-sm font-medium mb-2">
                   Name
                 </label>
                 <input
@@ -134,14 +133,12 @@ export const Contact = () => {
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  type="email"
-                  className="block text-sm font-medium mb-2"
-                >
+                <label htmlFor="email" className="block text-sm font-medium mb-2">
                   Email
                 </label>
                 <input
+                  id="email"
+                  type="email"
                   required
                   placeholder="your@email.com"
                   value={formData.email}
@@ -153,13 +150,11 @@ export const Contact = () => {
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium mb-2"
-                >
+                <label htmlFor="message" className="block text-sm font-medium mb-2">
                   Message
                 </label>
                 <textarea
+                  id="message"
                   rows={5}
                   required
                   value={formData.message}
@@ -180,21 +175,20 @@ export const Contact = () => {
                 {isLoading ? (
                   <>Sending...</>
                 ) : (
-                  <>
+                  <span className="flex items-center gap-2">
                     Send Message
                     <Send className="w-5 h-5" />
-                  </>
+                  </span>
                 )}
               </Button>
 
               {submitStatus.type && (
                 <div
-                  className={`flex items-center gap-3
-                     p-4 rounded-xl ${
-                       submitStatus.type === "success"
-                         ? "bg-green-500/10 border border-green-500/20 text-green-400"
-                         : "bg-red-500/10 border border-red-500/20 text-red-400"
-                     }`}
+                  className={`flex items-center gap-3 p-4 rounded-xl ${
+                    submitStatus.type === "success"
+                      ? "bg-green-500/10 border border-green-500/20 text-green-400"
+                      : "bg-red-500/10 border border-red-500/20 text-red-400"
+                  }`}
                 >
                   {submitStatus.type === "success" ? (
                     <CheckCircle className="w-5 h-5 flex-shrink-0" />
@@ -207,7 +201,6 @@ export const Contact = () => {
             </form>
           </div>
 
-          {/* Contact Info */}
           <div className="space-y-6 animate-fade-in animation-delay-400">
             <div className="glass rounded-3xl p-8">
               <h3 className="text-xl font-semibold mb-6">
@@ -234,16 +227,16 @@ export const Contact = () => {
               </div>
             </div>
 
-            {/* Availability Card */}
+            {/* Availability Card for professional freelance direction */}
             <div className="glass rounded-3xl p-8 border border-primary/30">
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                 <span className="font-medium">Currently Available</span>
               </div>
               <p className="text-muted-foreground text-sm">
-                I'm currently open to new opportunities and exciting projects.
-                Whether you need a full-time engineer or a freelance consultant,
-                let's talk!
+                I'm currently open to freelance web development projects and new opportunities. 
+                Whether you need a custom MERN stack application or a responsive frontend built with Next.js, 
+                let's talk about how I can help bring your ideas to life!
               </p>
             </div>
           </div>
@@ -252,3 +245,4 @@ export const Contact = () => {
     </section>
   );
 };
+
