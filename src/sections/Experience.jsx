@@ -134,16 +134,3 @@ export const Experience = () => {
   );
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
