@@ -4,7 +4,7 @@ import { About } from "@/sections/About";
 import { Skills } from "@/sections/Skills";
 import { Projects } from "@/sections/Projects";
 import { Experience } from "@/sections/Experience";
-import { Testimonials } from "@/sections/Testimonials";
+import { Certificates } from "@/sections/certificates";
 import { Contact } from "@/sections/Contact";
 import { Footer } from "./layout/Footer";
 
@@ -18,7 +18,7 @@ function App() {
         <Skills />
         <Projects />
         <Experience />
-        <Testimonials />
+        <Certificates />
         <Contact />
       </main>
       <Footer />
