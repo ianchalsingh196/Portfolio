@@ -98,7 +98,3 @@ export const About = () => {
 
 
 
-
-
-
-
