@@ -3,12 +3,12 @@ import { useState } from "react";
 
 const certificates = [
   {
-    title: "AWS Certified Solutions Architect",
-    issuer: "Amazon Web Services",
-    date: "Issued Dec 2025",
-    description: "Validation of expertise in designing and deploying scalable systems on AWS cloud infrastructure.",
-    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=500&h=300&fit=crop", // Replace with your cert image
-    link: "#"
+    title: "Delta (Full Stack Web Development)",
+    issuer: "Apna College",
+    date: "Issued Dec 2025", // You can update this with the specific completion date
+    description: "Successfully completed an intensive program covering the MERN stack, including MongoDB, Express.js, React, and Node.js.",
+    image: "/Apna-College.png", // Use the screenshot of your certificate here
+    link: "https://certificate.apnacollege.com/verify/68fba979397d5bd28608f268"
   },
   {
     title: "Meta Front-End Developer Professional Certificate",
