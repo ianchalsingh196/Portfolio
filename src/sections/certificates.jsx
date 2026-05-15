@@ -5,9 +5,9 @@ const certificates = [
   {
     title: "Delta (Full Stack Web Development)",
     issuer: "Apna College",
-    date: "Issued Dec 2025", // You can update this with the specific completion date
+    date: "Issued Dec 2025",
     description: "Successfully completed an intensive program covering the MERN stack, including MongoDB, Express.js, React, and Node.js.",
-    image: "/Apna-College.png", // Use the screenshot of your certificate here
+    image: "/Apna-College.png", 
     link: "https://certificate.apnacollege.com/verify/68fba979397d5bd28608f268"
   },
   {
