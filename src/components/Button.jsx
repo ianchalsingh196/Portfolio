@@ -21,11 +21,3 @@ export const Button = ({
     </button>
   );
 };
-
-
-
-
-
-
-
-
