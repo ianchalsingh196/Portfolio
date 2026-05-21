@@ -7,24 +7,37 @@ const certificates = [
     issuer: "Apna College",
     date: "Issued Dec 2025",
     description: "Successfully completed an intensive program covering the MERN stack, including MongoDB, Express.js, React, and Node.js.",
-    image: "/Apna-College.png", 
+    image: "/Apna-College.png",
     link: "https://certificate.apnacollege.com/verify/68fba979397d5bd28608f268"
   },
   {
-    title: "Meta Front-End Developer Professional Certificate",
-    issuer: "Coursera / Meta",
-    date: "Issued Aug 2025",
-    description: "Comprehensive program covering React, Version Control, UX/UI principles, and JavaScript patterns.",
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&h=300&fit=crop",
-    link: "#"
+    "title": "Smart India Hackathon 2024 - Internal Hackathon",
+    "issuer": "Rajkiya Engineering College, Sonbhadra",
+    "date": "Issued Sep 2024",
+    "description": "Certificate of Participation for successfully participating in the Internal Hackathon for SIH 2024, competing under Problem Statement ID: SIH 1666.",
+    "image": "/SIH-2k24.jpeg",
   },
   {
-    title: "Advanced TypeScript & Design Patterns",
-    issuer: "Frontend Masters",
-    date: "Issued May 2025",
-    description: "Advanced mastery of type systems, generics, and scalable architectural patterns in TypeScript.",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&h=300&fit=crop",
-    link: "#"
+    "title": "Smart India Hackathon 2025 - Internal Hackathon",
+    "issuer": "Rajkiya Engineering College, Sonbhadra",
+    "date": "Issued Sep 2025",
+    "description": "Certificate of Participation for competing as a member of team 'Victoryx' in the Software category against Problem ID: SIH/25009.",
+    "image": "/SIH-2k25.jpeg",
+  },
+  {
+    "title": "Codability'25 - National-Level Online Coding Contest",
+    "issuer": "IEEE Student Branch MMMUT & GeeksforGeeks",
+    "date": "Issued May 2025",
+    "description": "Certificate of Participation for successfully competing in Codability'25, a national-level online coding competition showcasing programming skills and problem-solving.",
+    "image": "/Codability-certificate.png",
+    "link": "#"
+  },
+  {
+    "title": "Generative AI for All Program",
+    "issuer": "Physics Wallah & Microsoft",
+    "date": "Issued Jan 2026",
+    "description": "Certificate of Completion for successfully completing the Generative AI for All program, covering fundamental concepts and practical applications of generative artificial intelligence technologies.",
+    "image": "/Genai-certificate.png",
   }
 ];
 
@@ -49,7 +62,7 @@ export const Certificates = () => {
        w-[800px] h-[800px] bg-primary/5
         rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
       />
-      
+
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -82,7 +95,7 @@ export const Certificates = () => {
                     className="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <a 
+                    <a
                       href={certificates[activeIdx].link}
                       className="bg-white text-black px-4 py-2 rounded-full flex items-center gap-2 text-sm font-semibold"
                     >
@@ -123,11 +136,10 @@ export const Certificates = () => {
                   <button
                     key={idx}
                     onClick={() => setActiveIdx(idx)}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      idx === activeIdx
-                        ? "w-8 bg-primary"
-                        : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
-                    }`}
+                    className={`h-2 rounded-full transition-all duration-300 ${idx === activeIdx
+                      ? "w-8 bg-primary"
+                      : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                      }`}
                   />
                 ))}
               </div>
