@@ -2,7 +2,7 @@
 
 A modern, fast, and fully responsive developer portfolio built to showcase my technical expertise, full-stack web applications, and engineering projects. 
 
-🔗 **Live Demo:** [portfolio-ianchalsingh196s-projects.vercel.app](https://portfolio-ianchalsingh196s-projects.vercel.app/)
+🔗 **Live Demo:** [https://anchalsingh-portfolio.vercel.app/](https://portfolio-ianchalsingh196s-projects.vercel.app/)
 
 ---
 
