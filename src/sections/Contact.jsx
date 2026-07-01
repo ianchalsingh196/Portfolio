@@ -33,7 +33,7 @@ export const Contact = () => {
     {
       name: "Discord",
       icon: <Disc className="w-5 h-5" />,
-      link: "https://discord.com/users/deepikasingh0165",
+      link: "https://discord.com/users/anchalsingh0196",
     },
   ];
 
