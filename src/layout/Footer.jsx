@@ -61,12 +61,3 @@ export const Footer = () => {
     </footer>
   );
 };
-
-
-
-
-
-
-
-
-

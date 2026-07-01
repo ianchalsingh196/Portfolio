@@ -1,257 +1,151 @@
+import React from "react";
 import {
   Mail,
   Phone,
   MapPin,
-  Send,
-  CheckCircle,
-  AlertCircle,
+  Linkedin,
+  Github,
+  Twitter,
+  Disc
 } from "lucide-react";
-import { Button } from "@/components/Button";
-import { useState } from "react";
-import emailjs from "@emailjs/browser";
-
-const contactInfo = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: "anchalsingh19654@gmail.com",
-    href: "mailto:anchalsingh19654@gmail.com",
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+91 9554452808",
-    href: "tel:+919554452808",
-  },
-  {
-    icon: MapPin,
-    label: "Location",
-    value: "Faridabad,Harbaspur, Jaunpur Uttar Pradesh",
-    href: "#",
-  },
-];
 
 export const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [isLoading, setIsLoading] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState({
-    type: null, // 'success' or 'error'
-    message: "",
-  });
+  const emailAddress = "anchalsingh19654@gmail.com";
+  const subject = encodeURIComponent("Portfolio Inquiry / Collaboration");
+  const mailtoLink = `mailto:${emailAddress}?subject=${subject}`;
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    setIsLoading(true);
-    setSubmitStatus({ type: null, message: "" });
-    
-    try {
-      // Accessing Vite environment variables
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-      // if (!serviceId || !templateId || !publicKey) {
-      //   throw new Error(
-      //     "EmailJS configuration is missing. Please check your .env file and restart the server."
-      //   );
-      // }
-
-      await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          from_name: formData.name,    // Ensure these match your EmailJS template fields
-          reply_to: formData.email,
-          message: formData.message,
-        },
-        publicKey
-      );
-
-      setSubmitStatus({
-        type: "success",
-        message: "Message sent successfully! I'll get back to you soon.",
-      });
-      setFormData({ name: "", email: "", message: "" });
-    } catch (err) {
-      console.error("EmailJS error:", err);
-      setSubmitStatus({
-        type: "error",
-        message: err?.text || err?.message || "Failed to send message. Please try again later.",
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  const socialLinks = [
+    {
+      name: "LinkedIn",
+      icon: <Linkedin className="w-5 h-5" />,
+      link: "https://www.linkedin.com/in/Anchalsingh06", // You can drop your personal profile slug here later
+    },
+    {
+      name: "GitHub",
+      icon: <Github className="w-5 h-5" />,
+      link: "https://www.github.com/ianchalsingh196",
+    },
+    {
+      name: "X (Twitter)",
+      icon: <Twitter className="w-5 h-5" />,
+      link: "https://x.com/AnchalSing44445",
+    },
+    {
+      name: "Discord",
+      icon: <Disc className="w-5 h-5" />,
+      link: "https://discord.com/users/deepikasingh0165",
+    },
+  ];
 
   return (
-    <section id="contact" className="py-32 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
-      </div>
+    <section id="contact" className="py-24 bg-[#0B1215] text-slate-300 font-sans relative overflow-hidden">
+      {/* Structural theme background glow decorations */}
+      <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl -translate-y-1/2 pointer-events-none" />
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
-            Get In Touch
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
-            Let's build{" "}
-            <span className="font-serif italic font-normal text-white">
-              something great.
-            </span>
-          </h2>
-          <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            Have a project in mind? I'd love to hear about it. Send me a message
-            and let's discuss how we can work together.
-          </p>
-        </div>
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Left Column: Context Details & Info Blocks */}
+          <div className="lg:col-span-5 space-y-8">
+            <div>
+              <h2 className="text-4xl font-bold text-white mb-4 tracking-tight">
+                Let's talk!
+              </h2>
+              <p className="text-slate-400 text-base leading-relaxed max-w-md">
+                I am currently open to full-stack web development projects, freelance opportunities,
+                and engineering collaborations. Whether you have a technical question or just want to connect, feel free to reach out.
+              </p>
+            </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          <div className="glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Name
-                </label>
-                <input
-                  id="name"
-                  type="text"
-                  required
-                  placeholder="Your name..."
-                  value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  Email
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  required
-                  placeholder="your@email.com"
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  rows={5}
-                  required
-                  value={formData.message}
-                  onChange={(e) =>
-                    setFormData({ ...formData, message: e.target.value })
-                  }
-                  placeholder="Your message..."
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
-                />
-              </div>
-
-              <Button
-                className="w-full"
-                type="submit"
-                size="lg"
-                disabled={isLoading}
+            {/* Direct Contact Info Row Blocks */}
+            <div className="space-y-4 max-w-md">
+              <a 
+                href={mailtoLink} 
+                className="flex items-center gap-4 p-4 rounded-xl bg-[#0E1010]/60 border border-emerald-500/10 hover:border-emerald-400/30 hover:bg-[#0E1010]/90 transition-all duration-300 group"
               >
-                {isLoading ? (
-                  <>Sending...</>
-                ) : (
-                  <span className="flex items-center gap-2">
-                    Send Message
-                    <Send className="w-5 h-5" />
-                  </span>
-                )}
-              </Button>
-
-              {submitStatus.type && (
-                <div
-                  className={`flex items-center gap-3 p-4 rounded-xl ${
-                    submitStatus.type === "success"
-                      ? "bg-green-500/10 border border-green-500/20 text-green-400"
-                      : "bg-red-500/10 border border-red-500/20 text-red-400"
-                  }`}
-                >
-                  {submitStatus.type === "success" ? (
-                    <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                  ) : (
-                    <AlertCircle className="w-5 h-5 flex-shrink-0" />
-                  )}
-                  <p className="text-sm">{submitStatus.message}</p>
+                <div className="text-emerald-400 group-hover:scale-105 transition-transform duration-300">
+                  <Mail className="w-5 h-5" />
                 </div>
-              )}
-            </form>
-          </div>
+                <span className="text-slate-300 font-medium text-sm md:text-base break-all">
+                  {emailAddress}
+                </span>
+              </a>
 
-          <div className="space-y-6 animate-fade-in animation-delay-400">
-            <div className="glass rounded-3xl p-8">
-              <h3 className="text-xl font-semibold mb-6">
-                Contact Information
-              </h3>
-              <div className="space-y-4">
-                {contactInfo.map((item, i) => (
+              <a 
+                href="tel:+919554452808" 
+                className="flex items-center gap-4 p-4 rounded-xl bg-[#0E1010]/60 border border-emerald-500/10 hover:border-emerald-400/30 hover:bg-[#0E1010]/90 transition-all duration-300 group"
+              >
+                <div className="text-emerald-400 group-hover:scale-105 transition-transform duration-300">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <span className="text-slate-300 font-medium text-sm md:text-base">
+                  +91 9554452808
+                </span>
+              </a>
+
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-[#0E1010]/60 border border-emerald-500/10 cursor-default">
+                <div className="text-emerald-400">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <span className="text-slate-300 font-medium text-sm md:text-base leading-snug">
+                  Faridabad, Harbaspur, Jaunpur, Uttar Pradesh
+                </span>
+              </div>
+            </div>
+
+            {/* Horizontal Social Links Ecosystem */}
+            <div className="pt-4">
+              <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">
+                Social Ecosystem
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {socialLinks.map((social, idx) => (
                   <a
-                    key={i}
-                    href={item.href}
-                    className="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition-colors group"
+                    key={idx}
+                    href={social.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="p-3.5 bg-[#0E1010]/60 border border-emerald-500/10 rounded-xl text-slate-400 hover:text-emerald-400 hover:border-emerald-400/30 hover:-translate-y-1 transition-all duration-300"
+                    title={social.name}
                   >
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <item.icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="text-sm text-muted-foreground">
-                        {item.label}
-                      </div>
-                      <div className="font-medium">{item.value}</div>
-                    </div>
+                    {social.icon}
                   </a>
                 ))}
               </div>
             </div>
+          </div>
 
-            {/* Availability Card for professional freelance direction */}
-            <div className="glass rounded-3xl p-8 border border-primary/30">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                <span className="font-medium">Currently Available</span>
+          {/* Right Column: Large Premium Gradient CTA Card */}
+          <div className="lg:col-span-7 h-full">
+            <div className="h-full min-h-[400px] bg-gradient-to-br from-[#0E1010] via-[#0E1010]/90 to-emerald-950/20 border border-emerald-500/10 p-10 md:p-12 rounded-[2.5rem] flex flex-col justify-center relative overflow-hidden group hover:border-emerald-500/20 transition-all duration-500">
+              
+              <div className="relative z-10 space-y-6">
+                <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight max-w-md">
+                  Ready to collaborate on the next big project?
+                </h3>
+                
+                <p className="text-base text-slate-400 max-w-lg leading-relaxed">
+                  I bring a mix of <span className="text-white font-medium">Full-Stack engineering</span> and scalable application development with modern architectures. Let's discuss how I can add immediate value to your team.
+                </p>
+
+                <div className="pt-4">
+                  <a
+                    href={mailtoLink}
+                    className="inline-flex items-center justify-center px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-[#0B1215] font-bold text-sm rounded-xl transition-all duration-300 shadow-xl shadow-emerald-500/5 hover:shadow-emerald-400/10 hover:scale-[1.02]"
+                  >
+                    Send an Inquiry
+                  </a>
+                </div>
               </div>
-              <p className="text-muted-foreground text-sm">
-                I'm currently open to freelance web development projects and new opportunities. 
-                Whether you need a custom MERN stack application or a responsive frontend built with Next.js, 
-                let's talk about how I can help bring your ideas to life!
-              </p>
+
+              {/* Decorative graphic backdrop circles */}
+              <div className="absolute -top-24 -right-24 w-72 h-72 bg-emerald-500/5 blur-3xl rounded-full pointer-events-none group-hover:bg-emerald-500/10 transition-colors duration-500" />
+              <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-emerald-900/5 blur-3xl rounded-full pointer-events-none" />
             </div>
           </div>
+
         </div>
       </div>
     </section>
   );
 };
-
-
-
-
-
-
-
-
-
-
