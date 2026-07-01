@@ -71,18 +71,6 @@ export const Contact = () => {
                 </span>
               </a>
 
-              <a 
-                href="tel:+919554452808" 
-                className="flex items-center gap-4 p-4 rounded-xl bg-[#0E1010]/60 border border-emerald-500/10 hover:border-emerald-400/30 hover:bg-[#0E1010]/90 transition-all duration-300 group"
-              >
-                <div className="text-emerald-400 group-hover:scale-105 transition-transform duration-300">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <span className="text-slate-300 font-medium text-sm md:text-base">
-                  +91 9554452808
-                </span>
-              </a>
-
               <div className="flex items-center gap-4 p-4 rounded-xl bg-[#0E1010]/60 border border-emerald-500/10 cursor-default">
                 <div className="text-emerald-400">
                   <MapPin className="w-5 h-5" />

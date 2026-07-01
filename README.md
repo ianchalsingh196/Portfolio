@@ -28,7 +28,7 @@ Follow these steps to set up and run the portfolio on your local machine:
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/ianchalsingh196/portfolio.git](https://github.com/ianchalsingh196/portfolio.git)
+   git clone [https://anchalsingh-portfolio.vercel.app/](https://github.com/ianchalsingh196/portfolio.git)
 
 Navigate into the project directory:
 cd portfolio
