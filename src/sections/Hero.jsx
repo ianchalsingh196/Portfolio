@@ -101,7 +101,8 @@ export const Hero = () => {
                       'Software Engineer', 2000,
                       'Full Stack Developer', 2000,
                       'MERN & Next.js Specialist', 2000,
-                      'Backend Architect', 2000,
+                      'Backend Developer', 2000,
+                      'AI/ML Architect', 2000,
                     ]}
                     wrapper="span"
                     speed={50}
@@ -121,7 +122,7 @@ export const Hero = () => {
                 Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
               <a
-                href="https://drive.google.com/uc?export=download&id=1Jojbx3iMuXRaZ7xe8_Eq2Y3hLigwNNQH"
+                href="https://drive.google.com/file/d/1WxxO0kvutnFvbiB0auVT_pde66EF0wF2/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -153,36 +154,31 @@ export const Hero = () => {
           {/* Right Column - Profile Image */}
           <div className="relative animate-fade-in animation-delay-300">
             {/* Profile Image */}
-            <div className="relative max-w-md mx-auto">
+            <div className="relative max-w-md mx-auto group">
               <div
                 className="absolute inset-0 
               rounded-3xl bg-gradient-to-br 
               from-primary/30 via-transparent 
-              to-primary/10 blur-2xl animate-pulse"
+              to-primary/10 blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"
               />
-              <div className="relative glass rounded-3xl p-2 glow-border">
-                <img
-                  src="/profile-photo.jpg"
-                  alt="Anchal Singh"
-                  className="w-full aspect-[4/5] object-cover rounded-2xl"
-                />
+              <div className="relative glass rounded-3xl p-2 glow-border overflow-hidden bg-[#0B1215]/50 backdrop-blur-sm">
+                <div className="overflow-hidden rounded-3xl w-full aspect-[4/5]">
+                  <img
+                    src="/profile-photo.jpg"
+                    alt="Anchal Singh"
+                    className="w-full h-full object-cover grayscale contrast-[1.10] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
+                  />
+                </div>
 
                 {/* Floating Badge */}
-                <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
+                <div className="absolute bottom-4 right-4 glass rounded-xl px-4 py-2 border border-primary/20 shadow-lg">
                   <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                    <span className="text-sm font-medium">
+                    <div className="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_10px_#10b981]" />
+                    <span className="text-sm font-medium text-white">
                       Available for work
                     </span>
                   </div>
                 </div>
-                {/* Stats Badge */}
-                {/* <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
-                  <div className="text-2xl font-bold text-primary">5+</div>
-                  <div className="text-xs text-muted-foreground">
-                    Years Exp.
-                  </div>
-                </div> */}
               </div>
             </div>
           </div>
@@ -230,9 +226,3 @@ export const Hero = () => {
     </section>
   );
 };
-
-
-
-
-
-
